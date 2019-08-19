@@ -12,6 +12,7 @@
 ## Guide
 
 ### Common
+
 * [하드 코딩된 모든 값<sub>magic literal</sub>](https://refactoring.com/catalog/replaceMagicLiteral.html)은 상수로 선언합니다.
 * 전역 변수를 사용하지 않습니다.
 	* `app`, `db`, `config`등의 변수들을 실행시켜줘야 할 때는 `main()`함수를 선언한 뒤 그 안에서 사용합니다.
@@ -19,13 +20,38 @@
 	* e.g. `value in {1, 2, 3}`
     
 ### Versioning
+
 * Python 3.6 이상 (`Python 3.7.3` 권장) 
+
+### Code lay-out 
+
+* 최상위 (top-level) 함수와 클래스 정의는 2라인 공백 
+* 클래스 내 메서드 정의는 1라인 공백 
+* 들여쓰기 공백 4칸 
+
+### Naming Conventions 
+
+* 변수명에서 _(밑줄)은 위치에 따라 아래와 같은 의미 내포 
+    * `_single_leading_underscore`: 내부 사용 변수
+    * `single_trailing_underscore_`: Python 기본 키워드 충돌 피하기 
+    * `__double_leading_and_trailing_underscore__`: magic 용도로 user-defined 네임스페이스 속성. 
+* 모듈명은 짧은 소문자로 구성 (필요하다면 밑줄로 구분) 
+* 함수명은 소문자 
+* 인스턴트 메소드의 첫 번째 인자는 `self` 
+* 클래스 메소드의 첫 번째 인자는 `cls`
+* 서브 클래스(sub-class)의 이름 충돌을 피하기 위해 밑줄 2개를 앞에 붙임 
+* 상수(constant)는 모듈 단위 내에서만 정의하며 대문자로 함 
+
+### Whitespace
+
+* 키워드 인자 (keyword argument)와 인자 기본값(default parameter value)는 `=`는 붙여 사용 
+* 괄호(`[ ]`, `( )`), 쉼표, 콜론 등의 불필요한 공백은 피함 
 
 ### Indentation
 
-함수 선언이 79자가 넘어간다면 한 줄에 하나의 인자씩 적어주고 마지막 인자 뒤 트레일링 콤마를 붙이고 Parentheses를 다음 줄에서 닫아줍니다.
+* 함수 선언이 79자가 넘어간다면 한 줄에 하나의 인자씩 적어주고 마지막 인자 뒤 트레일링 콤마를 붙이고 Parentheses를 다음 줄에서 닫아줍니다.
 
-auto formatter중 하나인 black의 기본 동작이기도 합니다.
+* auto formatter중 하나인 black의 기본 동작이기도 합니다.
 
 ```python
 def func(
