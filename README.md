@@ -8,7 +8,7 @@ AISlab의 코드 지향점을 논희하고 이를 정리한 스타일 가이드�
 
 # Style Guide
 
-* [Python for AISlab]()
+* [Python for AISlab](https://github.com/aislab-co/styleguide/python.md)
 * [R for AISlab]()
 
 # References
